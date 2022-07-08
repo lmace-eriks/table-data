@@ -1,14 +1,20 @@
 .tableDataContainer {
-    margin: 0;
+    margin: 0 0 1rem 0;
     padding: 0;
 }
 
-.caption, th, .td {
+.hasRows {
+    display: flex;
+    flex-direction: column;
+}
+
+.th, .td {
     border: 2px solid black;
 }
 
-.caption {
-    background-color: #ec1d24;
+.caption {}
+
+.captionText {
     border-bottom: none;
 }
 
@@ -18,6 +24,16 @@
     text-align: center;
     color: white;
     padding: 0.25rem;
+    background-color: #ec1d24;
+}
+
+.bottomCaption {
+    order: 2;
+}
+
+.standAloneCaption {
+    border: 2px solid black;
+    margin: 0.5rem 0 0 0;
 }
 
 .table {
@@ -34,10 +50,16 @@
 .tr {}
 
 .tr:nth-child(even) {
-    background-color: #c4c4c4;
+    background-color: #f0f0f0;
 }
 
 .th {}
+
+.thBlank {
+    background-color: white;
+    border-left: none;
+    border-top: none;
+}
 
 .th, td {
     padding: 0.5rem;
@@ -49,6 +71,23 @@
     text-align: center;
 }
 
+.tdBold {
+    font-weight: bold;
+}
+
 .tdLink {
     color: black;
+}
+
+.highlightCell {
+    background-color: #d2d2d2;
+}
+
+.highlightHeader {
+    color: white;
+    background-color: #ec1d24;
+}
+
+[data-cell*="col-0"] {
+    font-weight: bold;
 }
