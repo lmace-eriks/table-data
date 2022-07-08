@@ -1,1 +1,54 @@
-.tableDataContainer {}
+.tableDataContainer {
+    margin: 0;
+    padding: 0;
+}
+
+.caption, th, .td {
+    border: 2px solid black;
+}
+
+.caption {
+    background-color: #ec1d24;
+    border-bottom: none;
+}
+
+.captionText {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    padding: 0.25rem;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.thead {
+    font-size: 1.25rem;
+    color: white;
+    background-color: #4c4c4c;
+}
+
+.tr {}
+
+.tr:nth-child(even) {
+    background-color: #c4c4c4;
+}
+
+.th {}
+
+.th, td {
+    padding: 0.5rem;
+}
+
+.tbody {}
+
+.td {
+    text-align: center;
+}
+
+.tdLink {
+    color: black;
+}
