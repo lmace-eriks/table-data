@@ -75,3 +75,100 @@
     </table>
 </figure>
 ```
+
+## VTEX Block Example - Columns and Rows
+```
+"tabledata#bike-comparison": {
+    "props": {
+      "caption": "Comparing Bikes",
+      "columns": [
+        "Bike 1",
+        "Bike 2",
+        "Bike 3",
+        "Bike 4"
+      ],
+      "data": [
+        [
+          {
+            "rowTitle": "Type"
+          },
+          "Mountain",
+          "Road",
+          "Gravel",
+          "Commuter"
+        ],
+        [
+          {
+            "rowTitle": "Frame Meterial"
+          },
+          "Carbon",
+          "Steel",
+          "Ti",
+          {
+            "text": "More Details",
+            "url": "#more",
+            "newTab": false
+          }
+        ],
+        [
+          {
+            "rowTitle": "Gears"
+          },
+          "10",
+          "11",
+          "1",
+          "8"
+        ]
+      ]
+    }
+  }
+```
+
+* Each Data Array must have a `{rowTitle: "Your Row Title"}` object as the row's title.
+* Other data in the Data Array may be a string, or a link. Same syntax as Column Only.
+* Caption / Table Title renders below the table in this orientation.
+* Data Cell highlights the Row and Column it corresponds to.
+
+## DOM Example - Columns and Rows
+```
+<figure class="eriksbikeshop-tabledata-1-x-tableDataContainer eriksbikeshop-tabledata-1-x-hasRows">
+    <figcaption class="eriksbikeshop-tabledata-1-x-caption eriksbikeshop-tabledata-1-x-bottomCaption">
+        <div class="eriksbikeshop-tabledata-1-x-captionText eriksbikeshop-tabledata-1-x-standAloneCaption">Comparing Bikes</div>
+    </figcaption>
+    <table class="eriksbikeshop-tabledata-1-x-table">
+        <thead class="eriksbikeshop-tabledata-1-x-thead">
+            <tr data-tr="0" class="eriksbikeshop-tabledata-1-x-tr">
+                <th style="width: 20%;" class="eriksbikeshop-tabledata-1-x-thBlank"></th>
+                <th data-th="1" style="width: 20%;" class="eriksbikeshop-tabledata-1-x-th">Bike 1</th>
+                <th data-th="2" style="width: 20%;" class="eriksbikeshop-tabledata-1-x-th">Bike 2</th>
+                <th data-th="3" style="width: 20%;" class="eriksbikeshop-tabledata-1-x-th">Bike 3</th>
+                <th data-th="4" style="width: 20%;" class="eriksbikeshop-tabledata-1-x-th">Bike 4</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-tr="1" class="eriksbikeshop-tabledata-1-x-tr">
+                <th scope="row" data-cell="row-1-col-0" class="eriksbikeshop-tabledata-1-x-td">Type</th>
+                <td data-cell="row-1-col-1" class="eriksbikeshop-tabledata-1-x-td">Mountain</td>
+                <td data-cell="row-1-col-2" class="eriksbikeshop-tabledata-1-x-td">Road</td>
+                <td data-cell="row-1-col-3" class="eriksbikeshop-tabledata-1-x-td">Gravel</td>
+                <td data-cell="row-1-col-4" class="eriksbikeshop-tabledata-1-x-td">Commuter</td>
+            </tr>
+            <tr data-tr="2" class="eriksbikeshop-tabledata-1-x-tr">
+                <th scope="row" data-cell="row-2-col-0" class="eriksbikeshop-tabledata-1-x-td">Frame Meterial</th>
+                <td data-cell="row-2-col-1" class="eriksbikeshop-tabledata-1-x-td">Carbon</td>
+                <td data-cell="row-2-col-2" class="eriksbikeshop-tabledata-1-x-td">Steel</td>
+                <td data-cell="row-2-col-3" class="eriksbikeshop-tabledata-1-x-td">Ti</td>
+                <td data-cell="row-2-col-4" class="eriksbikeshop-tabledata-1-x-td"><a href="#more" target="_self"
+                        class="eriksbikeshop-tabledata-1-x-tdLink">More Details</a></td>
+            </tr>
+            <tr data-tr="3" class="eriksbikeshop-tabledata-1-x-tr">
+                <th scope="row" data-cell="row-3-col-0" class="eriksbikeshop-tabledata-1-x-td">Gears</th>
+                <td data-cell="row-3-col-1" class="eriksbikeshop-tabledata-1-x-td">10</td>
+                <td data-cell="row-3-col-2" class="eriksbikeshop-tabledata-1-x-td">11</td>
+                <td data-cell="row-3-col-3" class="eriksbikeshop-tabledata-1-x-td">1</td>
+                <td data-cell="row-3-col-4" class="eriksbikeshop-tabledata-1-x-td">8</td>
+            </tr>
+        </tbody>
+    </table>
+</figure>
+```

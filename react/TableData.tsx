@@ -40,7 +40,7 @@ const TableData: StorefrontFunctionComponent<TableDataProps> = ({ caption, colum
       })
     })
 
-    if (rowObjects > 0) {
+    if (rowObjects) {
       setColumnsAndRows(true);
       setColWidth((100 / (columns.length + 1)) + "%");
     } else {
@@ -120,7 +120,10 @@ const TableData: StorefrontFunctionComponent<TableDataProps> = ({ caption, colum
               <tr key={`tr${trIndex}`} data-tr={trIndex + 1} className={styles.tr}>
                 {
                   tr.map((td, tdIndex) => (
-                    <td key={`td${tdIndex}`} data-cell={`row-${trIndex + 1}-col-${tdIndex}`} onMouseOver={handleHover} onMouseOut={handleHover} className={styles.td}>{typeof td === "string" ? td : td.rowTitle ? td.rowTitle : cleanLink(td)}</td>
+                    <>
+                      {typeof td === "object" && td.rowTitle ? <th scope="row" key={`td${tdIndex}`} data-cell={`row-${trIndex + 1}-col-${tdIndex}`} onMouseOver={handleHover} onMouseOut={handleHover} className={styles.td}>{td.rowTitle}</th> :
+                        <td key={`td${tdIndex}`} data-cell={`row-${trIndex + 1}-col-${tdIndex}`} onMouseOver={handleHover} onMouseOut={handleHover} className={styles.td}>{typeof td === "string" ? td : td.rowTitle ? td.rowTitle : cleanLink(td)}</td>}
+                    </>
                   ))
                 }
               </tr>
@@ -135,7 +138,7 @@ const TableData: StorefrontFunctionComponent<TableDataProps> = ({ caption, colum
 }
 
 TableData.schema = {
-  title: 'Guide Button',
+  title: 'Table Data',
   description: '',
   type: 'object',
   properties: {}

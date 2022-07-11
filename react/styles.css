@@ -87,7 +87,3 @@
     color: white;
     background-color: #ec1d24;
 }
-
-[data-cell*="col-0"] {
-    font-weight: bold;
-}
